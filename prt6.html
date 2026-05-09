@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FormValidation</title>
+<script>
+    function validateForm()
+    {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        if(name == "" || email == "")
+        {
+            alert("Please fill all fields!");
+            return false;
+        }
+        if(email.indexOf("@") == -1 || email.indexOf(".") == -1)
+        {
+            alert("Please enter a valid email!");
+            return false;
+        }
+        alert("Form submitted successfully!");
+        return true;
+    }
+</script>
+</head>
+<body bgcolor="f2f2f2">
+    <center>
+        <h2>Student Registration Form</h2>
+        <hr width="40%">
+        <form onsubmit="return validateForm()">
+        <b>Name:</b><br>
+        <input type="text" id="name" size="30" placeholder="Enter your name">
+        <br><br>
+        <b>Email:</b><br>
+        <input type="text" id="email" size="30" placeholder="Enter your email">
+        <br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+        </form>
+        <hr width="40%">
+    <center>
+        <small>Web Development Practical Number 6</small>
+    </center>
+    </center>
+</body>
+</html>
